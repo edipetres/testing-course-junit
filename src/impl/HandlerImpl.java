@@ -93,12 +93,23 @@ public class HandlerImpl implements Handler {
         			index++;
         		}
         }
-        return evens;
+        
+        // trim array to remove unused spots - #javaLoveAndHate
+        int[] evensTrimmed = new int[index];
+        for (int i = 0; i < index; i++) {
+        		evensTrimmed[i] = evens[i];
+        }
+        
+        return evensTrimmed;
     }
 
     @Override
     public int calculateSum(int[] array) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+		int count = 0;
+		for (int number : array) {
+			count += number;
+		}
+		return count;
     }
 
     @Override

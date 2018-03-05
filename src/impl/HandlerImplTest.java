@@ -52,11 +52,24 @@ class HandlerImplTest {
     public void testEvens() {
     		// equivalence classes:
     		// even numbers: [-2, 0, 10]
-    		int[] numbers = new int[] {-3, 0, 1, 4};
-    		int[] expected = new int[] {0, 4};
+    		int[] numbers = new int[] {-3, 0, 1, 4, 6};
+    		int[] expected = new int[] {0, 4, 6};
     		int[] actual = handler.getEvenNumbers(numbers);
     		
+    		for (int num : actual) {
+    			System.out.println(num);
+    		}
+    		
     		assertArrayEquals(expected, actual);
+    }
+    
+    @Test
+    public void testSum() {
+    		assertAll("Should return sum for positive and negative integers", 
+    				() -> assertEquals(10, handler.calculateSum(new int[] {1, 4, 5})),
+    				() -> assertEquals(0, handler.calculateSum(new int[] {-5, 5})),
+    				() -> assertEquals(-35, handler.calculateSum(new int[] {-5, -10, -20}))
+    				);
     }
 
 
