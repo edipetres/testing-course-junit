@@ -1,6 +1,8 @@
 package impl;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import java.io.IOException;
 
@@ -49,6 +51,7 @@ class HandlerImplTest {
     }
     
     @Test
+    @DisplayName("Test getting even numbers")
     public void testEvens() {
     		// equivalence classes:
     		// even numbers: [-2, 0, 10]
